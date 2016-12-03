@@ -1,0 +1,49 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET		/							 controllers.PageController.loginPage
+
+
+GET 	/main							controllers.PageController.main
+
+GET		/websocket							controllers.PageController.socket
+GET		/getImageTable/:limit					controllers.LaunchController.getImageTable(limit:Int)
+GET		/getBundleTable/:limit					controllers.LaunchController.getBundleTable(limit:Int)
+GET		/getExeTable/:limit					controllers.LaunchController.getExeTable(limit:Int)
+
+GET 	/getSearchTable					controllers.LaunchController.getSearchTable(flag:Int, value:String)
+GET 	/getBundleSearchTable			controllers.LaunchController.getBundleSearchTable(flag:Int, value:String)
+GET 	/getExeSearchTable			controllers.LaunchController.getExeSearchTable(flag:Int, value:String)
+
+POST		/success					controllers.LaunchController.success
+
+POST 	/fail						controllers.LaunchController.fail
+
+POST 	/login						controllers.LaunchController.loginUser
+
+POST	/iddupcheck			controllers.LaunchController.idDupCheck
+
+POST	/jobnamedupcheck			controllers.LaunchController.jobDupCheck
+
+POST 	/bundledupcheck			controllers.LaunchController.bundleDupCheck
+
+POST 	/exedupcheck			controllers.LaunchController.exeDupCheck
+
+GET		/logout					controllers.LaunchController.logoutUser
+
+GET		/getDefault				controllers.LaunchController.getDefaultConf
+
+
+
+POST	/fileupload			controllers.LaunchController.uploadCustom(size:String, conf:String)
+POST	/bundleupload			controllers.LaunchController.uploadCustomBundle(size:String, conf:String)
+POST	/exeupload			controllers.LaunchController.uploadCustomExe(size:String, conf:String)
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+GET		/views/:data					controllers.PageController.getHtml(data:String)
+

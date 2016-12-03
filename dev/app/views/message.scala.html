@@ -1,0 +1,63 @@
+@* message Template File *@
+@(param: Any)
+<style>
+#textbox {
+    /*
+    width: 100vw;
+    height: 100vh;
+    */
+    
+    width:1200px;
+    height:600px;
+    
+    font-size: 24px;
+    /* Gray background to highlight the textbox */
+    background-color: #F8F8F8;
+    
+    /* Center text with flexbox */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+</style>
+
+
+
+
+		
+<div class="row">
+	<div class="col-lg-6">
+		<div class="form-group" id="group1">
+			<label class="col-sm-2 control-label">Job Mode</label>
+			<div class="col-sm-2">
+				<select class="form-control selectpicker" id="mode" name="mode" >
+    	   			<option>Single</option>
+       			<option>Pair</option>
+	       	</select>
+   			</div>
+		</div>
+	</div>
+	<div class="col-lg-6">
+		<div class="form-group" >
+			<form id="fileForm" enctype='multipart/form-data'>
+				<label class="control-label">Input data 1</label>
+				<div class="form-group" id="filediv">
+					<input type="file" name ="file" id="file"/>
+				</div>
+				<label class='control-label' id ="inputdata2">Input data 2</label>
+				<div class='form-group' id='file2div'>
+					<input type='file' name ='file2' id='file2'/>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div><!-- dialog -->
+    <textarea id="textbox" placeholder="Write Your Pipeline Script here!"></textarea>
+    <button type="button" id="finish-button" class="btn btn-green-3">SUBMIT	!</button>
+	</div><!-- modal -->
+</div>
+
+
+	
+  <script src="@routes.Assets.versioned("js/message.js")" ></script>
